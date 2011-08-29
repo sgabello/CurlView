@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		652A9D54140C47FE0068107F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652A9D53140C47FE0068107F /* QuartzCore.framework */; };
+		6594DA33140C467A001C6751 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6594DA32140C467A001C6751 /* UIKit.framework */; };
+		6594DA35140C467A001C6751 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6594DA34140C467A001C6751 /* Foundation.framework */; };
+		6594DA37140C467A001C6751 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6594DA36140C467A001C6751 /* CoreGraphics.framework */; };
+		6594DA3D140C467A001C6751 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6594DA3B140C467A001C6751 /* InfoPlist.strings */; };
+		6594DA3F140C467A001C6751 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594DA3E140C467A001C6751 /* main.m */; };
+		6594DA43140C467A001C6751 /* CurlViewDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594DA42140C467A001C6751 /* CurlViewDemoAppDelegate.m */; };
+		6594DA46140C467A001C6751 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6594DA44140C467A001C6751 /* MainWindow.xib */; };
+		6594DA49140C467A001C6751 /* CurlViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594DA48140C467A001C6751 /* CurlViewDemoViewController.m */; };
+		6594DA4C140C467A001C6751 /* CurlViewDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6594DA4A140C467A001C6751 /* CurlViewDemoViewController.xib */; };
+		6594DA59140C46BF001C6751 /* CurlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6594DA58140C46BF001C6751 /* CurlView.m */; };
+		6594DA5D140C4732001C6751 /* curl.png in Resources */ = {isa = PBXBuildFile; fileRef = 6594DA5B140C4732001C6751 /* curl.png */; };
+		6594DA5E140C4732001C6751 /* curl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6594DA5C140C4732001C6751 /* curl@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		652A9D53140C47FE0068107F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6594DA2E140C467A001C6751 /* CurlViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurlViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6594DA32140C467A001C6751 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6594DA34140C467A001C6751 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6594DA36140C467A001C6751 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6594DA3A140C467A001C6751 /* CurlViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CurlViewDemo-Info.plist"; sourceTree = "<group>"; };
+		6594DA3C140C467A001C6751 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6594DA3E140C467A001C6751 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6594DA40140C467A001C6751 /* CurlViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CurlViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		6594DA41140C467A001C6751 /* CurlViewDemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurlViewDemoAppDelegate.h; sourceTree = "<group>"; };
+		6594DA42140C467A001C6751 /* CurlViewDemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurlViewDemoAppDelegate.m; sourceTree = "<group>"; };
+		6594DA45140C467A001C6751 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		6594DA47140C467A001C6751 /* CurlViewDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurlViewDemoViewController.h; sourceTree = "<group>"; };
+		6594DA48140C467A001C6751 /* CurlViewDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurlViewDemoViewController.m; sourceTree = "<group>"; };
+		6594DA4B140C467A001C6751 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CurlViewDemoViewController.xib; sourceTree = "<group>"; };
+		6594DA57140C46BF001C6751 /* CurlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurlView.h; sourceTree = "<group>"; };
+		6594DA58140C46BF001C6751 /* CurlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurlView.m; sourceTree = "<group>"; };
+		6594DA5B140C4732001C6751 /* curl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curl.png; sourceTree = "<group>"; };
+		6594DA5C140C4732001C6751 /* curl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "curl@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6594DA2B140C467A001C6751 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				652A9D54140C47FE0068107F /* QuartzCore.framework in Frameworks */,
+				6594DA33140C467A001C6751 /* UIKit.framework in Frameworks */,
+				6594DA35140C467A001C6751 /* Foundation.framework in Frameworks */,
+				6594DA37140C467A001C6751 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6594DA23140C467A001C6751 = {
+			isa = PBXGroup;
+			children = (
+				6594DA56140C46BF001C6751 /* CurlView */,
+				6594DA38140C467A001C6751 /* CurlViewDemo */,
+				6594DA31140C467A001C6751 /* Frameworks */,
+				6594DA2F140C467A001C6751 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6594DA2F140C467A001C6751 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6594DA2E140C467A001C6751 /* CurlViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6594DA31140C467A001C6751 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				652A9D53140C47FE0068107F /* QuartzCore.framework */,
+				6594DA32140C467A001C6751 /* UIKit.framework */,
+				6594DA34140C467A001C6751 /* Foundation.framework */,
+				6594DA36140C467A001C6751 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6594DA38140C467A001C6751 /* CurlViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				6594DA41140C467A001C6751 /* CurlViewDemoAppDelegate.h */,
+				6594DA42140C467A001C6751 /* CurlViewDemoAppDelegate.m */,
+				6594DA44140C467A001C6751 /* MainWindow.xib */,
+				6594DA47140C467A001C6751 /* CurlViewDemoViewController.h */,
+				6594DA48140C467A001C6751 /* CurlViewDemoViewController.m */,
+				6594DA4A140C467A001C6751 /* CurlViewDemoViewController.xib */,
+				6594DA39140C467A001C6751 /* Supporting Files */,
+			);
+			path = CurlViewDemo;
+			sourceTree = "<group>";
+		};
+		6594DA39140C467A001C6751 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6594DA5B140C4732001C6751 /* curl.png */,
+				6594DA5C140C4732001C6751 /* curl@2x.png */,
+				6594DA3A140C467A001C6751 /* CurlViewDemo-Info.plist */,
+				6594DA3B140C467A001C6751 /* InfoPlist.strings */,
+				6594DA3E140C467A001C6751 /* main.m */,
+				6594DA40140C467A001C6751 /* CurlViewDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6594DA56140C46BF001C6751 /* CurlView */ = {
+			isa = PBXGroup;
+			children = (
+				6594DA57140C46BF001C6751 /* CurlView.h */,
+				6594DA58140C46BF001C6751 /* CurlView.m */,
+			);
+			path = CurlView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6594DA2D140C467A001C6751 /* CurlViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6594DA4F140C467A001C6751 /* Build configuration list for PBXNativeTarget "CurlViewDemo" */;
+			buildPhases = (
+				6594DA2A140C467A001C6751 /* Sources */,
+				6594DA2B140C467A001C6751 /* Frameworks */,
+				6594DA2C140C467A001C6751 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CurlViewDemo;
+			productName = CurlViewDemo;
+			productReference = 6594DA2E140C467A001C6751 /* CurlViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6594DA25140C467A001C6751 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Pixelinlove ltd";
+			};
+			buildConfigurationList = 6594DA28140C467A001C6751 /* Build configuration list for PBXProject "CurlViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6594DA23140C467A001C6751;
+			productRefGroup = 6594DA2F140C467A001C6751 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6594DA2D140C467A001C6751 /* CurlViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6594DA2C140C467A001C6751 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6594DA3D140C467A001C6751 /* InfoPlist.strings in Resources */,
+				6594DA46140C467A001C6751 /* MainWindow.xib in Resources */,
+				6594DA4C140C467A001C6751 /* CurlViewDemoViewController.xib in Resources */,
+				6594DA5D140C4732001C6751 /* curl.png in Resources */,
+				6594DA5E140C4732001C6751 /* curl@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6594DA2A140C467A001C6751 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6594DA3F140C467A001C6751 /* main.m in Sources */,
+				6594DA43140C467A001C6751 /* CurlViewDemoAppDelegate.m in Sources */,
+				6594DA49140C467A001C6751 /* CurlViewDemoViewController.m in Sources */,
+				6594DA59140C46BF001C6751 /* CurlView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6594DA3B140C467A001C6751 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6594DA3C140C467A001C6751 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6594DA44140C467A001C6751 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6594DA45140C467A001C6751 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		6594DA4A140C467A001C6751 /* CurlViewDemoViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6594DA4B140C467A001C6751 /* en */,
+			);
+			name = CurlViewDemoViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6594DA4D140C467A001C6751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6594DA4E140C467A001C6751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6594DA50140C467A001C6751 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CurlViewDemo/CurlViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "CurlViewDemo/CurlViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6594DA51140C467A001C6751 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CurlViewDemo/CurlViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "CurlViewDemo/CurlViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6594DA28140C467A001C6751 /* Build configuration list for PBXProject "CurlViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6594DA4D140C467A001C6751 /* Debug */,
+				6594DA4E140C467A001C6751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6594DA4F140C467A001C6751 /* Build configuration list for PBXNativeTarget "CurlViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6594DA50140C467A001C6751 /* Debug */,
+				6594DA51140C467A001C6751 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6594DA25140C467A001C6751 /* Project object */;
+}
