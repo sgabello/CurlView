@@ -72,13 +72,14 @@
 
 - (void)reset
 {
+	[CATransaction begin];
 	[CATransaction setDisableActions:YES];
 	curlBackLayer.hidden = NO;
 	curlBackLayer.mask.transform = CATransform3DIdentity;
 	curlLayer.mask.hidden = YES;
 	curlLayer.mask.transform = CATransform3DMakeRotation(endAngle, 0.0, 0.0, 1.0);
 	curlLayer.transform = CATransform3DMakeRotation(-endAngle, 0.0, 0.0, 1.0);
-	[CATransaction setDisableActions:NO];
+	[CATransaction commit];
 }
 
 - (id)initWithImage:(UIImage*)image curlStartAngle:(float)aStartAngle curlEndAngle:(float)aEndAngle
@@ -131,6 +132,8 @@
 	//	[curlBackLayer.mask setValue:[NSNumber numberWithFloat:startAngle] forKeyPath:@"transform.rotation.z"];
 	//	[curlLayer.mask setValue:[NSNumber numberWithFloat:startAngle] forKeyPath:@"transform.rotation.z"];
 	//	[curlLayer setValue:[NSNumber numberWithFloat:0] forKeyPath:@"transform.rotation.z"];
+	
+	[self reset];
 	
 	[CATransaction begin];
 	[CATransaction setAnimationDuration:kDuration];
