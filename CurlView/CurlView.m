@@ -7,8 +7,8 @@
 
 #import "CurlView.h"
 
-#define	kDuration	0.4
-#define kTiming		kCAMediaTimingFunctionEaseInEaseOut
+#define	kDuration	0.3
+#define kTiming		kCAMediaTimingFunctionEaseOut
 
 @interface CurlView ()
 
@@ -17,24 +17,20 @@
 @property (nonatomic) float endAngle;
 
 @property (nonatomic, retain) CALayer *curlBackLayer;
-@property (nonatomic, retain) CALayer *maskBackLayer;
 @property (nonatomic, retain) CALayer *curlLayer;
-@property (nonatomic, retain) CALayer *maskCurlLayer;
 
 @end
 
 @implementation CurlView
 
 @synthesize curlImage, startAngle, endAngle;
-@synthesize curlBackLayer, maskBackLayer, curlLayer, maskCurlLayer;
+@synthesize curlBackLayer, curlLayer;
 
 - (void)dealloc
 {
 	[curlImage release];
 	[curlBackLayer release];
-	[maskBackLayer release];
 	[curlLayer release];
-	[maskCurlLayer release];
 	[super dealloc];
 }
 
@@ -48,39 +44,41 @@
 	self.curlBackLayer = [CALayer layer];
 	curlBackLayer.contents = (id)curlImageRef;
 	curlBackLayer.frame = self.frame;
+	[self.layer addSublayer:curlBackLayer];
 	
-	self.maskBackLayer = [CALayer layer];
+	CALayer *maskBackLayer = [CALayer layer];
 	maskBackLayer.backgroundColor = [UIColor blueColor].CGColor;
 	maskBackLayer.frame = maskFrame;
 	maskBackLayer.anchorPoint = CGPointMake(0.0, 1.0);
 	maskBackLayer.position = CGPointMake(0.0, 0.0);
 	curlBackLayer.mask = maskBackLayer;
-	[self.layer addSublayer:curlBackLayer];
 
 	self.curlLayer = [CALayer layer];
 	curlLayer.contents = (id)curlImageRef;
 	curlLayer.frame = self.frame;
 	curlLayer.anchorPoint = CGPointMake(0.0, 0.0);
 	curlLayer.position = CGPointMake(0.0, 0.0);
-	curlLayer.transform = CATransform3DMakeRotation(-endAngle, 0.0, 0.0, 1.0);
+	[self.layer addSublayer:curlLayer];
 	
-	self.maskCurlLayer = [CALayer layer];
+	CALayer *maskCurlLayer = [CALayer layer];
 	maskCurlLayer.backgroundColor = [UIColor blueColor].CGColor;
 	maskCurlLayer.frame = maskFrame;
 	maskCurlLayer.anchorPoint = CGPointMake(0.0, 0.0);
 	maskCurlLayer.position = CGPointMake(0.0, 0.0);
-	maskCurlLayer.transform = CATransform3DMakeRotation(endAngle, 0.0, 0.0, 1.0);
-	curlLayer.mask = maskCurlLayer;	
-	[self.layer addSublayer:curlLayer];
+	curlLayer.mask = maskCurlLayer;
+	
+	[self reset];
 }
 
 - (void)reset
 {
-	[maskBackLayer removeAllAnimations];
-	[curlLayer removeAllAnimations];
-	[maskCurlLayer removeAllAnimations];
+	[CATransaction setDisableActions:YES];
 	curlBackLayer.hidden = NO;
-	curlLayer.mask = maskCurlLayer;
+	curlBackLayer.mask.transform = CATransform3DIdentity;
+	curlLayer.mask.hidden = YES;
+	curlLayer.mask.transform = CATransform3DMakeRotation(endAngle, 0.0, 0.0, 1.0);
+	curlLayer.transform = CATransform3DMakeRotation(-endAngle, 0.0, 0.0, 1.0);
+	[CATransaction setDisableActions:NO];
 }
 
 - (id)initWithImage:(UIImage*)image curlStartAngle:(float)aStartAngle curlEndAngle:(float)aEndAngle
@@ -103,39 +101,51 @@
 
 - (void)animate
 {	
-	CABasicAnimation *backMaskRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-	backMaskRotation.toValue = [NSNumber numberWithFloat:startAngle];
-	backMaskRotation.removedOnCompletion = NO;
-	backMaskRotation.fillMode = kCAFillModeForwards;
-	backMaskRotation.duration = kDuration;
-	backMaskRotation.timingFunction = [CAMediaTimingFunction functionWithName:kTiming];
-	[maskBackLayer addAnimation:backMaskRotation forKey:@"BMrotate"];
+//	CABasicAnimation *backMaskRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+//	backMaskRotation.toValue = [NSNumber numberWithFloat:startAngle];
+//	backMaskRotation.removedOnCompletion = NO;
+//	backMaskRotation.fillMode = kCAFillModeForwards;
+//	backMaskRotation.duration = kDuration;
+//	backMaskRotation.timingFunction = [CAMediaTimingFunction functionWithName:kTiming];
+//	[curlBackLayer.mask addAnimation:backMaskRotation forKey:@"BMrotate"];
+//	
+//	CABasicAnimation *curlMaskRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+//	curlMaskRotation.toValue = [NSNumber numberWithFloat:startAngle];
+//	curlMaskRotation.removedOnCompletion = NO;
+//	curlMaskRotation.fillMode = kCAFillModeForwards;
+//	curlMaskRotation.duration = kDuration;
+//	curlMaskRotation.timingFunction = [CAMediaTimingFunction functionWithName:kTiming];
+//	[curlLayer.mask addAnimation:curlMaskRotation forKey:@"CMrotate"];
+
+//	CABasicAnimation *curlRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+//	curlRotation.toValue = [NSNumber numberWithFloat:0];
+//	//curlRotation.removedOnCompletion = YES;
+//	curlRotation.fillMode = kCAFillModeForwards;
+//	curlRotation.duration = kDuration;
+//	curlRotation.timingFunction = [CAMediaTimingFunction functionWithName:kTiming];
+//	curlRotation.delegate = self;
+//	[curlLayer addAnimation:curlRotation forKey:@"Crotate"];
 	
-	CABasicAnimation *curlMaskRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-	curlMaskRotation.toValue = [NSNumber numberWithFloat:startAngle];
-	curlMaskRotation.removedOnCompletion = NO;
-	curlMaskRotation.fillMode = kCAFillModeForwards;
-	curlMaskRotation.duration = kDuration;
-	curlMaskRotation.timingFunction = [CAMediaTimingFunction functionWithName:kTiming];
-	[maskCurlLayer addAnimation:curlMaskRotation forKey:@"CMrotate"];
-
-	CABasicAnimation *curlRotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-	curlRotation.toValue = [NSNumber numberWithFloat:0];
-	curlRotation.removedOnCompletion = NO;
-	curlRotation.fillMode = kCAFillModeForwards;
-	curlRotation.duration = kDuration;
-	curlRotation.timingFunction = [CAMediaTimingFunction functionWithName:kTiming];
-	curlRotation.delegate = self;
-	[curlLayer addAnimation:curlRotation forKey:@"Crotate"];
-}
-
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
-{
-	if (flag && anim == [curlLayer animationForKey:@"Crotate"])
-	{
+	
+	
+	//	[curlBackLayer.mask setValue:[NSNumber numberWithFloat:startAngle] forKeyPath:@"transform.rotation.z"];
+	//	[curlLayer.mask setValue:[NSNumber numberWithFloat:startAngle] forKeyPath:@"transform.rotation.z"];
+	//	[curlLayer setValue:[NSNumber numberWithFloat:0] forKeyPath:@"transform.rotation.z"];
+	
+	[CATransaction begin];
+	[CATransaction setAnimationDuration:kDuration];
+	[CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kTiming]];
+	[CATransaction setCompletionBlock:^(void) {
+		[CATransaction setDisableActions:YES];
 		curlBackLayer.hidden = YES;
-		curlLayer.mask = nil;
-	}
+		curlLayer.mask.transform = CATransform3DIdentity;
+		[CATransaction setDisableActions:NO];
+	}];
+	curlLayer.mask.hidden = NO;
+	curlBackLayer.mask.transform = CATransform3DMakeRotation(startAngle, 0.0, 0.0, 1.0);
+	curlLayer.mask.transform = CATransform3DMakeRotation(startAngle, 0.0, 0.0, 1.0);
+	curlLayer.transform = CATransform3DIdentity;
+	[CATransaction commit];
 }
 
 @end
